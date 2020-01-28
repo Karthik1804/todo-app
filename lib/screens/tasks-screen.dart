@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TasksScreen extends StatelessWidget {
+  bool checked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +45,7 @@ class TasksScreen extends StatelessWidget {
             ),
             Expanded(
               child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 height: 300,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -52,9 +54,35 @@ class TasksScreen extends StatelessWidget {
                     topRight: Radius.circular(20),
                   ),
                 ),
+                child: TasksList(),
               ),
             )
           ],
         ));
+  }
+}
+
+class TasksList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        TaskTile(),
+        TaskTile(),
+      ],
+    );
+  }
+}
+
+class TaskTile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      trailing: Checkbox(
+        value: false,
+        onChanged: (bool newValue) {},
+      ),
+      title: Text('Map'),
+    );
   }
 }
