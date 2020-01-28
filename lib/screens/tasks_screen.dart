@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
   bool checked = false;
@@ -59,30 +60,5 @@ class TasksScreen extends StatelessWidget {
             )
           ],
         ));
-  }
-}
-
-class TasksList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        TaskTile(),
-        TaskTile(),
-      ],
-    );
-  }
-}
-
-class TaskTile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      trailing: Checkbox(
-        value: false,
-        onChanged: (bool newValue) {},
-      ),
-      title: Text('Map'),
-    );
   }
 }
