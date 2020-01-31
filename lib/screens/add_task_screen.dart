@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/models/task_data.dart';
+import 'package:todoey/constants.dart';
 
 class AddTaskScreen extends StatelessWidget {
   final Function addTaskCallback;
@@ -26,7 +27,7 @@ class AddTaskScreen extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Add Tasks',
-                style: TextStyle(color: Colors.lightBlueAccent, fontSize: 30),
+                style: TextStyle(color: kMainColor, fontSize: 30),
               ),
               SizedBox(
                 height: 20.0,
@@ -36,7 +37,7 @@ class AddTaskScreen extends StatelessWidget {
                 autofocus: true,
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.lightBlueAccent),
+                    borderSide: BorderSide(color: kMainColor),
                   ),
                 ),
                 onChanged: (newValue) {
@@ -57,7 +58,7 @@ class AddTaskScreen extends StatelessWidget {
                     'Add',
                     style: TextStyle(color: Colors.white),
                   ),
-                  color: Colors.lightBlueAccent,
+                  color: kMainColor,
                 ),
               )
             ],
