@@ -4,11 +4,14 @@ class TaskTile extends StatelessWidget {
   final String title;
   final bool isChecked;
   final Function checkboxCallback;
-  TaskTile({this.title, this.isChecked, this.checkboxCallback});
+  final Function deleteIntent;
+  TaskTile(
+      {this.title, this.isChecked, this.checkboxCallback, this.deleteIntent});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onLongPress: deleteIntent,
       title: Text(
         title,
         style: TextStyle(
