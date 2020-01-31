@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
   final Function addTaskCallback;
@@ -47,6 +49,9 @@ class AddTaskScreen extends StatelessWidget {
                   onPressed: () {
                     addTaskCallback(newTaskTitle);
                     //TODO: Add Task to todolist
+                    Provider.of<TaskData>(context, listen: false)
+                        .addTask(newTaskTitle);
+                    Navigator.pop(context);
                   },
                   child: Text(
                     'Add',
